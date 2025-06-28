@@ -2,6 +2,8 @@ package me.jackson30007.example;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.jackson30007.example.command.CommandRegistry;
+
 public class Main extends JavaPlugin {
 	private static Main instance;
 	
@@ -13,8 +15,8 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		instance = this;
 		
-		for (int i = 0; i < 1000; i++)
-			System.out.println("onEnable!");
+		// register all plugin commands
+		CommandRegistry.registerCommands(this);
 	}
 	
 	@Override
