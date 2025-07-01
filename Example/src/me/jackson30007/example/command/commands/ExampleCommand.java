@@ -11,6 +11,6 @@ public class ExampleCommand extends Command {
 
 	@Override
 	public void execute(CommandSender sender, String[] args) {
-		
+		sender.sendMessage("Example Command!");
 	}
 }

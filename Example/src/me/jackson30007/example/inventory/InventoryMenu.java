@@ -56,6 +56,7 @@ public class InventoryMenu {
 	}
 	
 	private InventoryType invType; // if null, size will be used
+	private boolean cancelAllClicks = true;
 	private int size;
 	private Component title;
 	private Map<Integer, InventoryItem> items = new HashMap<>();
@@ -76,6 +77,10 @@ public class InventoryMenu {
 	
 	public void setTitle(Component title) {
 		this.title = title;
+	}
+	
+	public void setCancelAllClicks(boolean cancelAllClicks) {
+		this.cancelAllClicks = cancelAllClicks;
 	}
 	
 	public void open(Player player) {
@@ -124,6 +129,9 @@ public class InventoryMenu {
 	}
 	
 	public void handleClick(Player player, InventoryClickEvent event) {
+		if (cancelAllClicks)
+			event.setCancelled(true);
+		
 		// call click events
 		ClickInfo info = new ClickInfo();
 		info.player = player;

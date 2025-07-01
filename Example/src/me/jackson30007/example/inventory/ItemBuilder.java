@@ -48,6 +48,11 @@ public class ItemBuilder {
 		return this;
 	}
 	
+	public ItemBuilder setMaxStackSize(int maxStackSize) {
+		this.meta.setMaxStackSize(maxStackSize);
+		return this;
+	}
+	
 	public ItemBuilder setSkullTextures(UUID uuid, String textures) {
 		if (!(meta instanceof SkullMeta)) return this;
 		SkullMeta meta = (SkullMeta) this.meta;

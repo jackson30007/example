@@ -8,6 +8,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import io.papermc.paper.command.brigadier.BasicCommand;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import me.jackson30007.example.command.commands.ExampleCommand;
+import me.jackson30007.example.command.commands.GiveScoreCommand;
+import me.jackson30007.example.command.commands.ShopCommand;
 
 public class CommandRegistry {
 	/*
@@ -15,6 +17,8 @@ public class CommandRegistry {
 	 */
 	public static void registerCommands(JavaPlugin plugin) {
 		registerCommand(plugin, new ExampleCommand());
+		registerCommand(plugin, new ShopCommand());
+		registerCommand(plugin, new GiveScoreCommand());
 	}
 	
 	
